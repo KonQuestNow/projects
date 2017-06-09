@@ -1,0 +1,46 @@
+//Created by Brit. Hammond
+
+apply plugin: 'maven'
+apply plugin: 'java'
+apply plugin: 'base'
+
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.10' //we want gradle 2.10 to run this project
+}
+
+
+if (!project.hasProperty('buildNumber')) {
+    ext.buildNumber = '0000'
+}
+version =  '1.0.'+buildNumber+'-SNAPSHOT'
+jar {
+    baseName = 'grant-worker'
+}
+
+repositories {
+    maven {
+          url "http://13.93.156.153:8081/nexus/content/repositories/test/" 
+    }
+}
+
+jar {
+    baseName = 'relay-test'
+    version =  '0.1.0'
+}
+
+uploadArchives {
+    repositories {
+       mavenDeployer {
+             repository(url: "http://13.93.156.153:8081/nexus/content/repositories/test/") {
+             authentication(userName: "admin", password: "admin123")
+}
+             pom.version = "1.0-SNAPSHOT"
+             pom.artifactId = "simple-project"
+             pom.groupId = "com.example"
+       }
+    }
+}
+ 
+
+
