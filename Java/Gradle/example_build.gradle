@@ -15,24 +15,24 @@ if (!project.hasProperty('buildNumber')) {
 }
 version =  '1.0.'+buildNumber+'-SNAPSHOT'
 jar {
-    baseName = 'grant-worker'
+    baseName = 'xxxx-xxxx'
 }
 
 repositories {
     maven {
-          url "http://13.93.156.153:8081/nexus/content/repositories/test/" 
+          url "http://xx.xx.xxx.xxx:8081/nexus/content/repositories/test/" 
     }
 }
 
 jar {
-    baseName = 'relay-test'
+    baseName = 'xxxxx-test'
     version =  '0.1.0'
 }
 
 uploadArchives {
     repositories {
        mavenDeployer {
-             repository(url: "http://13.93.156.153:8081/nexus/content/repositories/test/") {
+             repository(url: "http://xx.xx.xxx.xxx:8081/nexus/content/repositories/test/") {
              authentication(userName: "admin", password: "admin123")
 }
              pom.version = "1.0-SNAPSHOT"
