@@ -1,2 +1,2 @@
 # projects
-This is a sandbox repository for building and learning how to code!
+This is a sandbox repository for showcasing code I have created in various languages.
