@@ -1,0 +1,497 @@
+{
+	"variables": [],
+	"info": {
+		"name": "XXX",
+		"_postman_id": "7fea5d0e-1a2b-a29b-55f0-bb1cf1cb97a3",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "P1",
+			"description": "",
+			"item": [
+				{
+					"name": "XXX:  P1 Promo Create",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"// Parse json",
+									"var jsonData = JSON.parse(responseBody);",
+									"",
+									"// Set Variables",
+									"postman.setGlobalVariable(\"sha_id\", jsonData.content.sha);",
+									"postman.setGlobalVariable(\"file_id\", jsonData.content.name);",
+									"",
+									"// Validate Promo Response",
+									"tests[\"Promo Sent!\"] = responseCode.code === 201;"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{github}}/repos/{{repo}}/XXX/contents/Promo/{{$timestamp}}",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "token {{token}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"message\": \"XXX: Promo Push {{$timestamp}}\",\n  \"committer\": {\n    \"name\": \"Digital Street Team Alpha\",\n    \"email\": \"gh_email\"\n  },\n  \"content\": \"bXkgbmV3IGZpbGUgY29udGVudHM=\",\n  \"branch\": \"P1\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "XXX:  P1 Promo Delete",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"// Clear Variables",
+									"postman.clearGlobalVariable(\"sha_id\");",
+									"postman.clearGlobalVariable(\"file_id\");",
+									"",
+									"// Validate Files Removed",
+									"tests[\"Workspace reloaded.\"] = responseCode.code === 200;"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{github}}/repos/{{repo}}/XXX/contents/Promo/{{file_id}}",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "token {{token}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"message\": \"Reloading Workspace\",\n  \"committer\": {\n    \"name\": \"Digital Street Team Alpha\",\n    \"email\": \"gh_email\"\n  },\n  \"sha\": \"{{sha_id}}\",\n  \"branch\": \"P1\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "P2",
+			"description": "",
+			"item": [
+				{
+					"name": "XXX:  P2 Promo Create",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"// Parse json",
+									"var jsonData = JSON.parse(responseBody);",
+									"",
+									"// Set Variables",
+									"postman.setGlobalVariable(\"sha_id\", jsonData.content.sha);",
+									"postman.setGlobalVariable(\"file_id\", jsonData.content.name);",
+									"",
+									"// Validate Promo Response",
+									"tests[\"Promo Sent!\"] = responseCode.code === 201;"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{github}}/repos/{{repo}}/XXX/contents/Promo/{{$timestamp}}",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "token {{token}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"message\": \"XXX: Promo Push {{$timestamp}}\",\n  \"committer\": {\n    \"name\": \"Digital Street Team Alpha\",\n    \"email\": \"gh_email\"\n  },\n  \"content\": \"bXkgbmV3IGZpbGUgY29udGVudHM=\",\n  \"branch\": \"P2\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "XXX:  P2 Promo Delete",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"// Clear Variables",
+									"postman.clearGlobalVariable(\"sha_id\");",
+									"postman.clearGlobalVariable(\"file_id\");",
+									"",
+									"// Validate Files Removed",
+									"tests[\"Workspace reloaded.\"] = responseCode.code === 200;"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{github}}/repos/{{repo}}/XXX/contents/Promo/{{file_id}}",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "token {{token}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"message\": \"Reloading Workspace\",\n  \"committer\": {\n    \"name\": \"Digital Street Team Alpha\",\n    \"email\": \"gh_email\"\n  },\n  \"sha\": \"{{sha_id}}\",\n  \"branch\": \"P2\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "P3",
+			"description": "",
+			"item": [
+				{
+					"name": "XXX:  P3 Promo Create",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"// Parse json",
+									"var jsonData = JSON.parse(responseBody);",
+									"",
+									"// Set Variables",
+									"postman.setGlobalVariable(\"sha_id\", jsonData.content.sha);",
+									"postman.setGlobalVariable(\"file_id\", jsonData.content.name);",
+									"",
+									"// Validate Promo Response",
+									"tests[\"Promo Sent!\"] = responseCode.code === 201;"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{github}}/repos/{{repo}}/XXX/contents/Promo/{{$timestamp}}",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "token {{token}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"message\": \"XXX: Promo Push {{$timestamp}}\",\n  \"committer\": {\n    \"name\": \"Digital Street Team Alpha\",\n    \"email\": \"gh_email\"\n  },\n  \"content\": \"bXkgbmV3IGZpbGUgY29udGVudHM=\",\n  \"branch\": \"P3\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "XXX:  P3 Promo Delete",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"// Clear Variables",
+									"postman.clearGlobalVariable(\"sha_id\");",
+									"postman.clearGlobalVariable(\"file_id\");",
+									"",
+									"// Validate Files Removed",
+									"tests[\"Workspace reloaded.\"] = responseCode.code === 200;"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{github}}/repos/{{repo}}/XXX/contents/Promo/{{file_id}}",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "token {{token}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"message\": \"Reloading Workspace\",\n  \"committer\": {\n    \"name\": \"Digital Street Team Alpha\",\n    \"email\": \"gh_email\"\n  },\n  \"sha\": \"{{sha_id}}\",\n  \"branch\": \"P3\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "P4",
+			"description": "",
+			"item": [
+				{
+					"name": "XXX:  P4 Promo Create",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"// Parse json",
+									"var jsonData = JSON.parse(responseBody);",
+									"",
+									"// Set Variables",
+									"postman.setGlobalVariable(\"sha_id\", jsonData.content.sha);",
+									"postman.setGlobalVariable(\"file_id\", jsonData.content.name);",
+									"",
+									"// Validate Promo Response",
+									"tests[\"Promo Sent!\"] = responseCode.code === 201;"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{github}}/repos/{{repo}}/XXX/contents/Promo/{{$timestamp}}",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "token {{token}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"message\": \"XXX: Promo Push {{$timestamp}}\",\n  \"committer\": {\n    \"name\": \"Digital Street Team Alpha\",\n    \"email\": \"gh_email\"\n  },\n  \"content\": \"bXkgbmV3IGZpbGUgY29udGVudHM=\",\n  \"branch\": \"P4\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "XXX:  P4 Promo Delete",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"// Clear Variables",
+									"postman.clearGlobalVariable(\"sha_id\");",
+									"postman.clearGlobalVariable(\"file_id\");",
+									"",
+									"// Validate Files Removed",
+									"tests[\"Workspace reloaded.\"] = responseCode.code === 200;"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{github}}/repos/{{repo}}/XXX/contents/Promo/{{file_id}}",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "token {{token}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"message\": \"Reloading Workspace\",\n  \"committer\": {\n    \"name\": \"Digital Street Team Alpha\",\n    \"email\": \"gh_email\"\n  },\n  \"sha\": \"{{sha_id}}\",\n  \"branch\": \"P4\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "P5",
+			"description": "",
+			"item": [
+				{
+					"name": "XXX:  P5 Promo Create",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"// Parse json",
+									"var jsonData = JSON.parse(responseBody);",
+									"",
+									"// Set Variables",
+									"postman.setGlobalVariable(\"sha_id\", jsonData.content.sha);",
+									"postman.setGlobalVariable(\"file_id\", jsonData.content.name);",
+									"",
+									"// Validate Promo Response",
+									"tests[\"Promo Sent!\"] = responseCode.code === 201;"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{github}}/repos/{{repo}}/XXX/contents/Promo/{{$timestamp}}",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "token {{token}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"message\": \"XXX: Promo Push {{$timestamp}}\",\n  \"committer\": {\n    \"name\": \"Digital Street Team Alpha\",\n    \"email\": \"gh_email\"\n  },\n  \"content\": \"bXkgbmV3IGZpbGUgY29udGVudHM=\",\n  \"branch\": \"P5\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "XXX:  P5 Promo Delete",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"// Clear Variables",
+									"postman.clearGlobalVariable(\"sha_id\");",
+									"postman.clearGlobalVariable(\"file_id\");",
+									"",
+									"// Validate Files Removed",
+									"tests[\"Workspace reloaded.\"] = responseCode.code === 200;"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{github}}/repos/{{repo}}/XXX/contents/Promo/{{file_id}}",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "token {{token}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"message\": \"Reloading Workspace\",\n  \"committer\": {\n    \"name\": \"{{Digital Street Team Alpha}}\",\n    \"email\": \"gh_email\"\n  },\n  \"sha\": \"{{sha_id}}\",\n  \"branch\": \"P5\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "P6",
+			"description": "",
+			"item": [
+				{
+					"name": "XXX:  P5 Promo Create",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"// Parse json",
+									"var jsonData = JSON.parse(responseBody);",
+									"",
+									"// Set Variables",
+									"postman.setGlobalVariable(\"sha_id\", jsonData.content.sha);",
+									"postman.setGlobalVariable(\"file_id\", jsonData.content.name);",
+									"",
+									"// Validate Promo Response",
+									"tests[\"Promo Sent!\"] = responseCode.code === 201;"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{github}}/repos/{{repo}}/XXX/contents/Promo/{{$timestamp}}",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "token {{token}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"message\": \"XXX: Promo Push {{$timestamp}}\",\n  \"committer\": {\n    \"name\": \"Digital Street Team Alpha\",\n    \"email\": \"gh_email\"\n  },\n  \"content\": \"bXkgbmV3IGZpbGUgY29udGVudHM=\",\n  \"branch\": \"P6\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "XXX:  P5 Promo Delete",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"// Clear Variables",
+									"postman.clearGlobalVariable(\"sha_id\");",
+									"postman.clearGlobalVariable(\"file_id\");",
+									"",
+									"// Validate Files Removed",
+									"tests[\"Workspace reloaded.\"] = responseCode.code === 200;"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{github}}/repos/{{repo}}/XXX/contents/Promo/{{file_id}}",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "token {{token}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"message\": \"Reloading Workspace\",\n  \"committer\": {\n    \"name\": \"{{Digital Street Team Alpha}}\",\n    \"email\": \"gh_email\"\n  },\n  \"sha\": \"{{sha_id}}\",\n  \"branch\": \"P6\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
