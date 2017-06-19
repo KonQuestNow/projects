@@ -1,0 +1,47 @@
+# Docker-Compose file created by Brit Hammond
+
+# To use: 
+
+# Navigate to folder via command line and run command - "docker-compose up -d"
+
+
+
+
+# Start Cassandra
+
+kong-database:
+  restart: always
+  image: cassandra:2.2
+  ports:
+   - "9042:9042"
+
+# Start KONG
+
+kong:
+  restart: always
+  image: kong:latest
+  ports:
+   - "8000:8000"
+   - "8443:8443"
+   - "8001:8001"
+   - "7946:7946"
+   - "7946:7946/udp"
+  environment:
+   - "KONG_DATABASE=cassandra"
+   - "KONG_CASSANDRA_CONTACT_POINTS=kong-database"
+   - "KONG_PG_HOST=kong-database"
+  links:
+   - kong-database:kong-database
+
+# Start KONGA Admin
+
+konga:
+  restart: always
+  image: pantsel/konga
+  ports:
+   - "5000:5000"
+   - "1337:1337"
+  environment:
+   - "KONGA_BACKEND_URL=http://127.0.0.1:1337"
+  links:
+   - kong:kong 
