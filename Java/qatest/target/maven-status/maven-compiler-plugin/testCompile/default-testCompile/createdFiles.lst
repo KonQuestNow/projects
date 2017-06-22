@@ -1,0 +1,3 @@
+step_definitions/SmokeTestSteps.class
+qa/relay/notifications/AppTest.class
+RunFeatures.class
